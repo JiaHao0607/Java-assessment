@@ -76,10 +76,6 @@
   2. Modify the createStudentMenu so it handles correctly the exception when a wrong date format is inserted by the user.
   3. Catch the exception and show a proper message to the user.
   
- ## Part 5: Writing Unit Tests
- 1. Write 2 Unit tests for the class *StudentService*
- 2. Write 2 Unit tests for the class *CourseService*
-  
   
   ## Challenge Yourself
   1. Implement a way to store grades for each course a student is taking. There should be a way to update/set the score.
