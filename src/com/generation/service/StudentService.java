@@ -35,11 +35,11 @@ public class StudentService
         //TODO implement
     }
 
-    public void enrollToCourse( String studentId, Course course )
+    public void enrolToCourse( String studentId, Course course )
     {
         if ( students.containsKey( studentId ) )
         {
-            students.get( studentId ).enrollToCourse( course );
+            students.get( studentId ).enrolToCourse( course );
         }
     }
 

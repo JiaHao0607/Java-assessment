@@ -13,7 +13,7 @@ public class CourseService
 {
     private final Map<String, Course> courses = new HashMap<>();
 
-    private final Map<String, List<Student>> enrolledStudents = new HashMap<>();
+    private final Map<String, List<Student>> enroledStudents = new HashMap<>();
 
     public CourseService()
     {
@@ -54,20 +54,20 @@ public class CourseService
         return null;
     }
 
-    public void enrollStudent( String courseId, Student student )
+    public void enrolStudent( String courseId, Student student )
     {
-        if ( !enrolledStudents.containsKey( courseId ) )
+        if ( !enroledStudents.containsKey( courseId ) )
         {
-            enrolledStudents.put( courseId, new ArrayList<>() );
+            enroledStudents.put( courseId, new ArrayList<>() );
         }
-        enrolledStudents.get( courseId ).add( student );
+        enroledStudents.get( courseId ).add( student );
     }
 
-    public void showEnrolledStudents( String courseId )
+    public void showenroledStudents( String courseId )
     {
-        if ( enrolledStudents.containsKey( courseId ) )
+        if ( enroledStudents.containsKey( courseId ) )
         {
-            List<Student> students = enrolledStudents.get( courseId );
+            List<Student> students = enroledStudents.get( courseId );
             for ( Student student : students )
             {
                 System.out.println( student );
@@ -84,10 +84,10 @@ public class CourseService
             Course course = courses.get( key );
             System.out.println( course );
         }
-        System.out.println( "Enrolled Students" );
-        for ( String key : enrolledStudents.keySet() )
+        System.out.println( "enroled Students" );
+        for ( String key : enroledStudents.keySet() )
         {
-            List<Student> students = enrolledStudents.get( key );
+            List<Student> students = enroledStudents.get( key );
             System.out.println( "Students on Course " + key + ": " );
             for ( Student student : students )
             {

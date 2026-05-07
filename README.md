@@ -19,7 +19,7 @@
   1. Open the *Student* class (`src/com/generation/model/Student.java`) and implement the following methods:
   
    ```java
-    public void enrollToCourse( Course course )
+    public void enrolToCourse( Course course )
     {
         //TODO implement this method
     }

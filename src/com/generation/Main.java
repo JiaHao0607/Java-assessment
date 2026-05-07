@@ -35,7 +35,7 @@ public class Main
                     gradeStudent( studentService, scanner );
                     break;
                 case 4:
-                    enrollStudentToCourse( studentService, courseService, scanner );
+                    enrolStudentToCourse( studentService, courseService, scanner );
                     break;
                 case 5:
                     showStudentsSummary( studentService, scanner );
@@ -48,7 +48,7 @@ public class Main
         while ( option != 7 );
     }
 
-    private static void enrollStudentToCourse( StudentService studentService, CourseService courseService,
+    private static void enrolStudentToCourse( StudentService studentService, CourseService courseService,
                                                Scanner scanner )
     {
         System.out.println( "Insert student ID" );
@@ -69,9 +69,9 @@ public class Main
             return;
         }
         System.out.println( course );
-        courseService.enrollStudent( courseId, student );
-        studentService.enrollToCourse( studentId, course );
-        System.out.println( "Student with ID: " + studentId + " enrolled successfully to " + courseId );
+        courseService.enrolStudent( courseId, student );
+        studentService.enrolToCourse( studentId, course );
+        System.out.println( "Student with ID: " + studentId + " enroled successfully to " + courseId );
 
     }
 

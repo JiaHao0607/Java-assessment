@@ -21,7 +21,7 @@ public class Student
         super( id, name, email, birthDate );
     }
 
-    public void enrollToCourse( Course course )
+    public void enrolToCourse( Course course )
     {
         //TODO implement this method
     }
