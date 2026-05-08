@@ -1,6 +1,3 @@
-
-<img align="right" width="150" height="150" src="https://media-exp1.licdn.com/dms/image/C4E0BAQF7BYCCZt5epw/company-logo_200_200/0?e=2159024400&v=beta&t=qUAFP9bUgBEEXGVQYpUXW1J_OiP8e0r4rFBpqp8OrxA">
-
 # Java Programming Fundamentals	- Assessment
 
  <br/>
@@ -8,12 +5,12 @@
  It's time to see how much you learned about Java and Object Oriented Programming.
  
  ## Part 1: Understanding the StudentGen project
- 1. Download the source code and import the project using IntelliJ Idea or any other IDE you prefer.
+ 1. Download the source code and import the project using Visual Studio Code, IntelliJ IDEA, or any other IDE you prefer.
  2. Understand the project stucture:
  * Packages
  * Classes
  * Functionality
- 3. Run and test the project to get a deeper undertanding of how it works (remember the persistence mindset!).
+ 3. Run and test the project to get a deeper undertanding of how it works.
  
   ## Part 2: Implementing the Student and StudentService missing features
   1. Open the *Student* class (`src/com/generation/model/Student.java`) and implement the following methods:
@@ -66,7 +63,7 @@
  
  2. Test the program to verify it works as expected:
   * Create a new student.
-  * Enrroll the student to few courses.
+  * Enrol the student to a few courses.
   * Grade the student.
   * Show the students and courses summary and verify that data is correct.
   
@@ -80,4 +77,4 @@
   ## Challenge Yourself
   1. Implement a way to store grades for each course a student is taking. There should be a way to update/set the score.
   Afterwards, fill in the `public List<Course> findPassedCourses( Course course )` method in Student.java
-  2. Implement an additional feature in the menu options that will display the average grade of all the students suscribed to a given course.
+  2. Implement an additional feature in the menu options that will display the average grade of all the students subscribed to a given course.
