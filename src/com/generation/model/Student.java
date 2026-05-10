@@ -59,10 +59,21 @@ public class Student
 
         return String.format("The student did not take Course ID: %s", courseID);
     }
-    public List<Course> findPassedCourses( Course course )
+    public List<Course> findPassedCourses()
     {
-        //TODO implement this method
-        return null;
+        //TODO (Done) implement this method
+        List<Course> passedCourses = new ArrayList<>();
+
+        courseGrade.forEach((courseID, score)->{
+            if(approvedCourses.containsKey(courseID)){
+                Course course = approvedCourses.get(courseID);
+
+                if(score >= (double)course.getCredits()/2){
+                    passedCourses.add(course);
+                }
+            }
+        });
+        return passedCourses;
     }
 
     public boolean isAttendingCourse( String courseCode )
