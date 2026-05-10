@@ -33,6 +33,19 @@ public class StudentService
     public void showSummary()
     {
         //TODO implement
+        // Show each student's information, along with the course(s) taken
+        System.out.println("Students' Information:");
+        students.forEach((studentId, student) -> {
+            System.out.println(student);
+
+            List<Course> studentCourses = student.getApprovedCourses();
+
+            if(studentCourses.size() > 0)
+                System.out.println("Student has courses.");
+            else
+                System.out.println("Student has no courses.");
+
+        });
     }
 
     public void enrolToCourse( String studentId, Course course )
