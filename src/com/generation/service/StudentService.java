@@ -10,6 +10,12 @@ public class StudentService
 {
     private final Map<String, Student> students = new HashMap<>();
 
+    public StudentService(){
+        subscribeStudent(new Student("001", "John", "johndoe@gmail.com", new Date("01/01/2000")));
+        subscribeStudent(new Student("002", "Jane", "janesmith@hotmail.com", new Date("06/07/2000")));
+        subscribeStudent(new Student("003", "Jessica", "jessica@yahoo.com", new Date("06/07/2000")));
+    }
+
     public void subscribeStudent( Student student )
     {
         students.put( student.getId(), student );
