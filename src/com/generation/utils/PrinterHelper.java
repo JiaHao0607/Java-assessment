@@ -34,15 +34,28 @@ public class PrinterHelper
         System.out.println( "| . 1 Register Student                |" );
         System.out.println( "|-------------------------------------|" );
         System.out.println( "| Enter student name:                 |" );
-        String name = scanner.next();
+        String name = scanner.nextLine();
         System.out.println( "| Enter student ID:                   |" );
-        String id = scanner.next();
+        String id = scanner.nextLine();
         System.out.println( "| Enter student email:                |" );
-        String email = scanner.next();
-        System.out.println( "| Enter student birth date(mm/dd/yyyy)|" );
-        DateFormat formatter = new SimpleDateFormat( "mm/dd/yyyy");
-        //TODO validate date format and catch exception to avoid crash
-        Date birthDate = formatter.parse( scanner.next());
+        String email = scanner.nextLine();
+        //TODO validate date format and catch exception to avoid crash (Done)
+        DateFormat formatter = new SimpleDateFormat( "MM/dd/yyyy");
+        formatter.setLenient(false);
+        Date birthDate = null;
+
+        do {
+            System.out.println( "| Enter student birth date(MM/dd/yyyy)|" );
+            String inputDate = scanner.nextLine(); // "01 Jan 2000"
+
+            try{
+                birthDate = formatter.parse(inputDate);
+                break;
+            }catch (ParseException e){  // Exceptions
+                System.out.println("Date format is invalid.");
+            }
+
+        }while(true);
         System.out.println( "|-------------------------------------|" );
         Student student = new Student( id, name, email, birthDate );
         System.out.println( "Student Successfully Registered! " );
