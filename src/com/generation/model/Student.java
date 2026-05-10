@@ -50,8 +50,8 @@ public class Student
 
     public boolean isAttendingCourse( String courseCode )
     {
-        //TODO implement this method
-        return false;
+        //TODO (Done) implement this method
+        return approvedCourses.containsKey(courseCode);
     }
 
     @Override
