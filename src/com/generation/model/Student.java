@@ -16,6 +16,9 @@ public class Student
 
     private final Map<String, Course> approvedCourses = new HashMap<>();
 
+    // Create a separate hashmap to store the course and credit
+    private final Map<String, Double> courseGrade = new Hashmap<>(); // <courseID, credit>
+
     public Student( String id, String name, String email, Date birthDate )
     {
         super( id, name, email, birthDate );
@@ -41,7 +44,21 @@ public class Student
         return false;
     }
 
-    // CHALLENGE IMPLEMENTATION: Read README.md to find instructions on how to solve. 
+    // CHALLENGE IMPLEMENTATION: Read README.md to find instructions on how to solve.
+
+    public String setGrade(String courseID, double score){
+        if(approvedCourses.containsKey(courseID)){
+            if(!courseGrade.containsKey(courseID)){
+                courseGrade.put(courseID, score);
+                return String.format("Score for Course ID: %s has been recorded successfully", courseID);
+            }
+            else{
+                return String.format("A score has already been recorded for Course ID: %s", courseID);
+            }
+        }
+
+        return String.format("The student did not take Course ID: %s", courseID);
+    }
     public List<Course> findPassedCourses( Course course )
     {
         //TODO implement this method
