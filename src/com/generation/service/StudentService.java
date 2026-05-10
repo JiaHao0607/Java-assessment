@@ -33,7 +33,7 @@ public class StudentService
     public boolean isSubscribed( String studentId )
     {
         //TODO implement this method
-        return false;
+        return students.containsKey(studentId);
     }
 
     public void showSummary()
