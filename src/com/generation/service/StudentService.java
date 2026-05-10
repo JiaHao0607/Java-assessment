@@ -56,5 +56,19 @@ public class StudentService
         }
     }
 
+    public void showPassedCourses(Student student){
+        List<Course> passedCourses = student.findPassedCourses();
+
+        if(passedCourses.size() > 0){
+            System.out.println("Courses the student has passed: ");
+            passedCourses.forEach((course)->{
+                System.out.println(course);
+            });
+        }
+        else{
+            System.out.println("The student did not pass any courses.");
+        }
+    }
+
 
 }
