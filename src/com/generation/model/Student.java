@@ -17,7 +17,7 @@ public class Student
     private final Map<String, Course> approvedCourses = new HashMap<>();
 
     // Create a separate hashmap to store the course and credit
-    private final Map<String, Double> courseGrade = new Hashmap<>(); // <courseID, credit>
+    private final Map<String, Double> courseGrade = new HashMap<>(); // <courseID, credit>
 
     public Student( String id, String name, String email, Date birthDate )
     {
