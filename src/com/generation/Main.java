@@ -45,7 +45,7 @@ public class Main
                     break;
                 case 7:
                     showPassedCourses(studentService, scanner);
-                    break
+                    break;
             }
         }
         while ( option != 8 );
