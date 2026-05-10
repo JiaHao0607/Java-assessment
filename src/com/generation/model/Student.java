@@ -23,7 +23,11 @@ public class Student
 
     public void enrolToCourse( Course course )
     {
-        //TODO implement this method
+        //TODO (Done) implement this method
+        if(!courses.contains(course)){
+        courses.add(course);
+        registerApprovedCourse(course);
+        }
     }
 
     public void registerApprovedCourse( Course course )
