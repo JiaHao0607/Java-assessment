@@ -64,7 +64,17 @@ public class Student
     public List<Course> getApprovedCourses()
     {
         //TODO implement this method
-        return null;
+        // Return courses the student is taking
+        List<Course> listedCourses = new ArrayList<>();
+
+        if(!approvedCourses.isEmpty()){
+            approvedCourses.forEach((courseId, course)->{
+                listedCourses.add(course);
+            });
+        }
+
+        return listedCourses;
+    }
     }
 
     @Override
