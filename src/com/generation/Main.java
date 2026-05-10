@@ -87,7 +87,33 @@ public class Main
 
     private static void gradeStudent( StudentService studentService, Scanner scanner )
     {
+        System.out.println("Enter student ID: ");
+        String studentID = scanner.next();
+        Student student = studentService.findStudent(studentID);
 
+        if(student != null){
+            System.out.printf("Enter the course ID for Student ID: %s", studentID);
+            String courseID = scanner.next();
+            boolean isAttendingCourse = student.isAttendingCourse(courseID);
+
+            if(isAttendingCourse){
+                System.out.printf("Enter the score for course ID: %s", courseID);
+                double score = scanner.nextDouble();
+
+                if(score < 0 || score > 9){
+                    System.out.println("Invalid score entered");
+                }
+                else{
+                    System.out.println(student.setGrade(courseID, score));
+                }
+            }
+            else{
+                System.out.println("Student is not attending this course.");
+            }
+        }
+        else{
+            System.out.println("Student with ID " + studentID + " not found");
+        }
     }
 
     private static void findStudent( StudentService studentService, Scanner scanner )
