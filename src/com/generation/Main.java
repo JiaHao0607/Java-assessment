@@ -43,9 +43,12 @@ public class Main
                 case 6:
                     showCoursesSummary( courseService, scanner );
                     break;
+                case 7:
+                    showPassedCourses(studentService, scanner);
+                    break
             }
         }
-        while ( option != 7 );
+        while ( option != 8 );
     }
 
     private static void enrolStudentToCourse( StudentService studentService, CourseService courseService,
@@ -114,6 +117,24 @@ public class Main
         else{
             System.out.println("Student with ID " + studentID + " not found");
         }
+    }
+
+    private static void showPassedCourses(StudentService studentService, Scanner scanner){
+    System.out.println( "Enter student ID: " );
+        String studentID = scanner.next();
+        Student student = studentService.findStudent( studentID );
+        if ( student != null )
+        {
+            System.out.println( "Student Found: " );
+            System.out.println( student );
+
+            // Show the courses the student has passed
+            studentService.showPassedCourses(student);
+        }
+        else
+        {
+            System.out.println( "Student with ID " + studentID + " not found" );
+        }    
     }
 
     private static void findStudent( StudentService studentService, Scanner scanner )
